@@ -21,7 +21,7 @@
       "startTime": "2025/03 - 2025/07",
       "media": {
         "type": "video",
-        "src": "works/projecy_urbandash.mp4",
+        "src": "works/project_urbandash.mp4",
         "alt": "项目1"
       },
       "techStack": ["C#", "Unity", "Virtual Reality"  ,"Flight simulation","City driving"]
