@@ -1,0 +1,43 @@
+{
+  "works": [
+    {
+      "id": 1,
+      "title": "【微信小游戏】3D城市大亨",
+      "type": "微信小游戏",
+      "description": "基于Unity的微信小游戏，玩家可以在3D城市环境中扮演城市大亨，参考monopoly go的游戏规则，在城市地图中购买房产并管理资产。",
+      "startTime": "2024/07 - 2025/12",
+      "media": {
+        "type": "video",
+        "src": "works/project_cityking.mp4",        
+        "alt": "项目2"
+      },
+      "techStack": ["C#", "团结引擎", "AI", "微信小游戏", "模拟经营"]
+    },
+    {
+      "id": 2,
+      "title": "【Quest / Pico】御空者｜Urban Dash",
+      "type": "VR应用",
+      "description": "基于Unity的VR应用，模拟城市飞行驾驶游戏，玩家可以在虚拟城市环境中驾驶战机，完成战斗和竞速。",
+      "startTime": "2025/03 - 2025/07",
+      "media": {
+        "type": "video",
+        "src": "works/projecy_urbandash.mp4",
+        "alt": "项目1"
+      },
+      "techStack": ["C#", "Unity", "Virtual Reality"  ,"Flight simulation","City driving"]
+    },
+    {
+      "id": 3,
+      "title": "【Vision Pro / Quest / Pico】月球任务2030",
+      "type": "VR应用",
+      "description": "基于Unity的VR应用，模拟月球任务2030，玩家可以在虚拟月球数字孪生环境中进行任务操作。",
+      "startTime": "2024/01 - 2025/03",
+      "media": {
+        "type": "video",
+        "src": "works/project_lunartask.mp4",
+        "alt": "项目1"
+      },
+      "techStack": ["C#", "Unity", "Virtual Reality"]
+    }
+  ]
+}
