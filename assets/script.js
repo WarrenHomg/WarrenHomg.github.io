@@ -62,20 +62,19 @@ function createParticle(container) {
     const startX = Math.random() * window.innerWidth;
     const startY = Math.random() * window.innerHeight;
     
-    // 随机大小和颜色
+    // 随机大小和黑白颜色
     const size = Math.random() * 3 + 1;
-    const colors = ['#00f3ff', '#ff00ff', '#00ff9d'];
-    const color = colors[Math.floor(Math.random() * colors.length)];
+    const opacity = Math.random() * 0.8 + 0.2;
     
     particle.style.cssText = `
         position: absolute;
         width: ${size}px;
         height: ${size}px;
-        background: ${color};
+        background: white;
+        opacity: ${opacity};
         border-radius: 50%;
         left: ${startX}px;
         top: ${startY}px;
-        box-shadow: 0 0 ${size * 2}px ${color};
         pointer-events: none;
         animation: float ${Math.random() * 10 + 10}s linear infinite;
     `;
@@ -108,7 +107,7 @@ function initWorkItemHover() {
     
     workItems.forEach(item => {
         item.addEventListener('mouseenter', function() {
-            // 添加光效
+            // 添加简约黑白光效
             const glow = document.createElement('div');
             glow.className = 'item-glow';
             glow.style.cssText = `
@@ -117,11 +116,11 @@ function initWorkItemHover() {
                 left: -2px;
                 right: -2px;
                 bottom: -2px;
-                background: linear-gradient(45deg, #00f3ff, #ff00ff, #00ff9d);
-                border-radius: 15px;
+                background: rgba(153, 153, 153, 0.1);
+                border: 1px solid #999;
+                border-radius: 0;
                 z-index: -1;
                 opacity: 0.3;
-                animation: glowPulse 2s ease-in-out infinite;
             `;
             
             this.style.position = 'relative';
@@ -137,15 +136,7 @@ function initWorkItemHover() {
     });
 }
 
-// 添加光效动画
-const glowStyle = document.createElement('style');
-glowStyle.textContent = `
-    @keyframes glowPulse {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 0.6; }
-    }
-`;
-document.head.appendChild(glowStyle);
+// 添加光效动画（已移除，使用简约静态效果）
 
 // 视频播放功能
 function initVideoPlayback() {
@@ -230,10 +221,10 @@ function showVideoModal(videoSrc) {
         width: 90%;
         max-width: 800px;
         background: #000;
-        border: 2px solid #00f3ff;
-        border-radius: 10px;
+        border: 1px solid #999;
+        border-radius: 0;
         overflow: hidden;
-        box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+        box-shadow: 0 0 10px rgba(153, 153, 153, 0.2);
     `;
     
     const video = document.createElement('video');
@@ -254,23 +245,23 @@ function showVideoModal(videoSrc) {
         width: 30px;
         height: 30px;
         background: transparent;
-        border: 2px solid #00f3ff;
-        border-radius: 50%;
-        color: #00f3ff;
+        border: 2px solid #999;
+        border-radius: 0;
+        color: #999;
         font-size: 1.2rem;
         cursor: pointer;
         transition: all 0.3s ease;
     `;
     
     closeBtn.addEventListener('mouseenter', function() {
-        this.style.background = '#00f3ff';
-        this.style.color = '#000';
-        this.style.boxShadow = '0 0 10px rgba(0, 243, 255, 0.8)';
+        this.style.background = '#999';
+        this.style.color = '#fff';
+        this.style.boxShadow = '0 0 5px rgba(153, 153, 153, 0.5)';
     });
     
     closeBtn.addEventListener('mouseleave', function() {
         this.style.background = 'transparent';
-        this.style.color = '#00f3ff';
+        this.style.color = '#999';
         this.style.boxShadow = 'none';
     });
     
@@ -349,12 +340,12 @@ function initMouseFollow() {
         position: fixed;
         width: 20px;
         height: 20px;
-        border: 2px solid #00f3ff;
-        border-radius: 50%;
+        border: 2px solid #999;
+        border-radius: 0;
         pointer-events: none;
         z-index: 9999;
         transition: all 0.1s ease;
-        mix-blend-mode: difference;
+        background: transparent;
     `;
     
     document.body.appendChild(cursor);
@@ -370,7 +361,7 @@ function initMouseFollow() {
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             cursor.style.transform = 'scale(1.5)';
-            cursor.style.background = 'rgba(0, 243, 255, 0.3)';
+            cursor.style.background = 'rgba(153, 153, 153, 0.1)';
         });
         
         element.addEventListener('mouseleave', function() {
