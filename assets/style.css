@@ -1,14 +1,15 @@
-/* 黑白极简风格个人简介网站样式 */
+/* 黑白极简风格个人简介网站样式 - 增强黑色元素 */
 
 :root {
     --primary-color: #000000;       /* 主色：纯黑 */
-    --secondary-color: #333333;     /* 次主色：深灰 */
-    --accent-color: #666666;        /* 强调色：中灰 */
+    --secondary-color: #1a1a1a;     /* 次主色：深灰 - 改为更深的黑色 */
+    --accent-color: #444444;        /* 强调色：中灰 - 加深 */
     --bg-color: #ffffff;            /* 背景：纯白 */
     --card-bg: #ffffff;             /* 卡片背景：纯白 */
-    --text-primary: #1a1a1a;        /*主要文字：近黑 */
+    --text-primary: #000000;        /*主要文字：改为纯黑 */
     --text-secondary: #555555;      /* 次要文字：灰 */
-    --border-color: #e5e5e5;        /* 边框：浅灰 */
+    --border-color: #cccccc;        /* 边框：浅灰 */
+    --border-dark: #000000;         /* 深色边框：纯黑 */
     --hover-bg: #f4f4f4;            /* 悬停背景 */
 }
 
@@ -24,6 +25,7 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
+    border-top: 5px solid var(--border-dark); /* 顶部黑色粗线条 */
 }
 
 /* 隐藏原有的科幻背景动画 */
@@ -40,8 +42,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* 高透明度白底 */
-    border-bottom: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.95); /* 改为黑色背景 */
+    border-bottom: 1px solid var(--border-dark); /* 黑色边框 */
     z-index: 1000;
     padding: 1.2rem 0;
     backdrop-filter: blur(5px);
@@ -60,7 +62,7 @@ body {
     font-family: 'Georgia', serif; /* 改用衬线体提升气质，或保持无衬线 */
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #ffffff; /* 白色文字 */
     letter-spacing: -0.5px;
     text-transform: uppercase;
 }
@@ -72,7 +74,7 @@ body {
 }
 
 .nav-link {
-    color: var(--text-secondary);
+    color: #cccccc; /* 浅灰文字 */
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -81,7 +83,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: #ffffff; /* 悬停时白色文字 */
     box-shadow: none;
     border: none;
 }
@@ -94,7 +96,7 @@ body {
     height: 1px;
     bottom: -4px;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: #ffffff; /* 白色下划线 */
     transition: width 0.3s ease;
 }
 
@@ -107,6 +109,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 8rem 2rem 4rem;
+    position: relative;
 }
 
 .section {
@@ -116,7 +119,7 @@ body {
 /* 个人信息卡片 - 去除边框光晕，改为纯净版 */
 .profile-card {
     background: var(--card-bg);
-    border: none;
+    border: 1px solid var(--border-dark); /* 添加黑色边框 */
     padding: 2rem;
     /* 极简风格通常不需要强烈的阴影，或者使用非常淡的阴影 */
     /* box-shadow: 0 20px 40px rgba(0,0,0,0.05); */ 
@@ -143,20 +146,20 @@ body {
     height: 120px;
     border-radius: 50%;
     /* 灰阶背景或直接放图 */
-    background: #f0f0f0; 
+    background: #000000; /* 改为黑色背景 */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-color);
-    border: 1px solid var(--border-color);
+    color: #ffffff; /* 白色文字 */
+    border: 2px solid var(--border-dark); /* 加粗黑色边框 */
 }
 
 .profile-name {
     font-family: 'Georgia', serif; /* 标题使用衬线体增加设计感 */
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 700; /* 加粗 */
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
@@ -165,10 +168,15 @@ body {
 
 .profile-title {
     font-size: 1rem;
-    color: var(--text-secondary);
-    font-weight: 400;
-    letter-spacing: 1px;
+    color: var(--primary-color); /* 改为黑色 */
+    font-weight: 600; /* 加粗 */
+    letter-spacing: 1.5px; /* 增加字间距 */
     text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    background: transparent;
+    border: 1px solid var(--border-dark); /* 黑色边框 */
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 /* 信息网格 - 线性风格 */
@@ -177,8 +185,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-dark); /* 黑色边框 */
+    border-bottom: 1px solid var(--border-dark); /* 黑色边框 */
     padding: 2rem 0;
 }
 
@@ -208,16 +216,17 @@ body {
 
 .info-text h3 {
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: var(--primary-color); /* 改为黑色 */
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    font-weight: 700; /* 加粗 */
 }
 
 .info-text p {
     font-size: 1rem;
-    color: var(--text-primary);
-    font-weight: 400;
+    color: var(--primary-color);
+    font-weight: 600; /* 加粗 */
 }
 
 /* 关于我 */
@@ -228,7 +237,7 @@ body {
 .section-title {
     font-family: 'Georgia', serif;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 700; /* 加粗 */
     color: var(--primary-color);
     margin-bottom: 2rem;
     text-align: center;
@@ -237,25 +246,29 @@ body {
     text-transform: none; /* 取消全大写 */
 }
 
-/* 移除标题下方的渐变线，改为小黑点或短线 */
+/* 标题下方的黑色线条 */
 .section-title::after {
     content: '';
     position: absolute;
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background: var(--primary-color);
+    width: 60px;
+    height: 2px;
+    background: var(--primary-color); /* 黑色线条 */
 }
 
 .bio-text {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: var(--text-secondary);
+    color: var(--primary-color); /* 改为黑色 */
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
+    font-weight: 500; /* 加粗 */
+    padding: 2rem;
+    border-left: 2px solid var(--border-dark); /* 左侧黑色线条 */
+    border-right: 2px solid var(--border-dark); /* 右侧黑色线条 */
 }
 
 /* 社交链接 - 纯黑白按钮 */
@@ -271,9 +284,9 @@ body {
     align-items: center;
     padding: 0.8rem 1.5rem;
     background: transparent;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-dark); /* 黑色边框 */
     border-radius: 0;
-    color: var(--text-primary);
+    color: var(--primary-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -305,7 +318,7 @@ body {
 
 .work-item {
     background: transparent;
-    border: 1px solid #999; /* 添加简约线条边框 */
+    border: 1px solid var(--border-dark); /* 黑色边框 */
     border-radius: 0;
     overflow: visible; /* 允许内容溢出 */
     box-shadow: none;
@@ -313,8 +326,8 @@ body {
 
 .work-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    border-color: #666;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* 更深的阴影 */
+    border-color: var(--border-dark); /* 悬停时黑色边框 */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -397,9 +410,9 @@ body {
 }
 
 .work-title {
-    font-family: 'Georgia', serif;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     text-transform: none;
@@ -432,14 +445,16 @@ body {
 
 /* 项目标题样式 - 深色 */
 .work-title {
-    color: #333333;
+    color: var(--primary-color); /* 改为纯黑 */
     margin-bottom: 0.5rem;
+    font-weight: 800; /* 加粗 */
 }
 
 /* 项目描述样式 - 稍浅色 */
 .work-description {
-    color: #666666;
+    color: var(--primary-color); /* 改为黑色 */
     margin-bottom: 0.75rem;
+    font-weight: 500; /* 加粗 */
 }
 
 /* 项目时间样式 - 浅色 */
@@ -451,11 +466,11 @@ body {
 /* 标签样式 - 简约描边 */
 .tech-tag {
     background: transparent;
-    border: 1px solid #999;
+    border: 1px solid var(--border-dark); /* 黑色边框 */
     border-radius: 0; /* 改为直角 */
     padding: 0.3rem 0.8rem;
     font-size: 0.75rem;
-    color: #666;
+    color: var(--primary-color); /* 黑色文字 */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     backdrop-filter: none;
@@ -469,6 +484,49 @@ body {
     border-color: #000;
     transform: none;
     box-shadow: none;
+}
+
+/* 联系方式部分链接样式 - 增强黑色视觉 */
+.contact-link a {
+    color: var(--primary-color); /* 纯黑文字 */
+    text-decoration: none;
+    font-weight: 700; /* 加粗 */
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    font-size: 1.1rem; /* 增大字体 */
+}
+
+.contact-link a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* 加粗下划线 */
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.contact-link a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px); /* 轻微移动效果 */
+}
+
+.contact-link a:hover::after {
+    width: 100%;
+}
+
+.contact-title {
+    font-size: 0.8rem;
+    color: var(--primary-color); /* 改为黑色 */
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700; /* 加粗 */
+    border-bottom: 1px solid var(--border-dark); /* 底部黑色线条 */
+    padding-bottom: 0.3rem;
+    display: inline-block;
 }
 
 /* 响应式调整 */
@@ -487,7 +545,38 @@ body {
     }
     
     .info-item {
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid var(--border-dark); /* 改为黑色边框 */
         padding: 1.5rem 0;
     }
+    
+    /* 移动端导航栏调整 */
+    .navbar {
+        background: rgba(0, 0, 0, 0.98); /* 更不透明的黑色 */
+    }
+}
+
+/* 页脚样式增强 */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* 增加滚动条样式 - 黑色主题 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }

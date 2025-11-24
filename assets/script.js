@@ -338,21 +338,20 @@ function initMouseFollow() {
     cursor.className = 'cursor';
     cursor.style.cssText = `
         position: fixed;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #999;
-        border-radius: 0;
+        width: 24px;
+        height: 24px;
         pointer-events: none;
         z-index: 9999;
         transition: all 0.1s ease;
-        background: transparent;
+        background: #999;
+        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     `;
     
     document.body.appendChild(cursor);
     
     document.addEventListener('mousemove', function(e) {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
+        cursor.style.left = e.clientX - 12 + 'px';
+        cursor.style.top = e.clientY - 12 + 'px';
     });
     
     // 鼠标悬停效果
@@ -361,12 +360,12 @@ function initMouseFollow() {
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             cursor.style.transform = 'scale(1.5)';
-            cursor.style.background = 'rgba(153, 153, 153, 0.1)';
+            cursor.style.opacity = '0.7';
         });
-        
+
         element.addEventListener('mouseleave', function() {
             cursor.style.transform = 'scale(1)';
-            cursor.style.background = 'transparent';
+            cursor.style.opacity = '1';
         });
     });
 }
